@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaditi Digra | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: #d8b4e2;
+      overflow-x: hidden;
+    }
+
+  
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(270deg,
+    #2a003a, #6e00ff, #c084fc, #2a003a);
+  background-size: 800% 800%;
+  animation: gradientShift 30s ease infinite;
+  opacity: 0.15;
+  z-index: -1;  
+  pointer-events: none; 
+  filter: blur(60px);
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(12, 0, 20, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 0 15px #c084fc88;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #c084fc;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #d8b4e2;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #c084fc;
+  text-shadow: 0 0 10px #c084fc;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(12, 0, 20, 0.9);
+    margin-top: 1rem;
+    border-top: 1px solid #c084fc33;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
+
+    
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    
+    .intro {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+      text-shadow: 0 0 10px #c084fc;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .btn {
+      background: transparent;
+      color: #d8b4e2;
+      border: 2px solid #c084fc;
+      padding: 0.8rem 1.6rem;
+      margin: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+      text-transform: uppercase;
+      border-radius: 6px;
+      box-shadow: 0 0 8px #d8b4e2;
+    }
+
+    .btn:hover {
+      background: #c084fc;
+      color: #000;
+      box-shadow: 0 0 15px #c084fc;
+    }
+
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px #c084fc;
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+  
+    .about-text {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      animation: fadeInUp 1.5s ease-in-out;
+      color: #d8b4e2;
+      text-shadow: 0 0 6px #c084fc88;
+    }
+
+  
+    .work-video {
+      width: 80%;
+      max-width: 100%;
+      border: 2px solid #c084fc;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #c084fc;
+      animation: fadeIn 2s ease-in-out;
+      margin-bottom: 3rem;
+    }
+
+  
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #c084fc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1.2s ease-in-out;
+      text-align: left;
+      box-shadow: 0 0 8px #c084fc33;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 18px #c084fcaa;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #d8b4e2;
+      text-shadow: none;
+    }
+
+    .card .btn {
+      display: inline-block;
+      margin-top: 0;
+    }
+
+  
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 1.1rem;
+      border: 2px solid #c084fc;
+      background: #111;
+      color: #d8b4e2;
+      border-radius: 6px;
+      resize: vertical;
+      box-shadow: 0 0 8px #c084fc44;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 15px #c084fccc;
+      border-color: #c084fc;
+    }
+
+    .contact-form button {
+      margin-top: 1rem;
+      width: 50%;
+      border-radius: 6px;
+      box-shadow: 0 0 10px #c084fc88;
+    }
+
+  
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.1rem;
+      border-top: 1px solid #333;
+      color: #d8b4e2cc;
+      text-shadow: 0 0 6px #c084fc44;
+    }
+
+  
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #c084fc;
+      color: #000;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #c084fc;
+      z-index: 999;
+    }
+
+  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    
+    @media screen and (max-width: 992px) {
+      .work-video {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .intro {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .card {
+        width: 90%;
+      }
+      .contact-form button {
+        width: 70%;
+      }
+      .nav-container {
+        gap: 1.5rem;
+        padding: 0.5rem 0;
+      }
+      .nav-link {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+  <script defer>
+    // Back to Top button functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) backToTopBtn.style.display = 'flex';
+        else backToTopBtn.style.display = 'none';
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Aaditi Digra</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <ul id="nav-links" class="nav-links">
+      <li><a class="nav-link" href="#">Home</a></li>
+      <li><a class="nav-link" href="#work">Work</a></li>
+      <li><a class="nav-link" href="#projects">Projects</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  <!-- Introduction -->
+  <section id="introduction" class="parallax">
+    <div class="container">
+      <h1 class="intro">Hi, I'm Aaditi!!</h1>
+      <p class="tagline">Web Developer | Graphic Designer | Freelancer</p>
+      <button class="btn" onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+      <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Me</button>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="parallax">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        I'm Aaditi, a passionate Web Developer & Graphic Designer with a flair for turning ideas into stunning visuals. My journey began with a love for creativity, crafts, and colors, which gradually evolved into a deep interest in digital design.
+I offer design solutions tailored to your brand’s voice and values. Whether you’re building from scratch or need a creative, refresh start, I’m here to help. 
+
+      </p>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="parallax" id="work">
+    <div class="container">
+      <h2 class="section-title">My Work</h2>
+      <video class="work-video" autoplay muted loop playsinline>
+  <source src="posters.mp4" type="video/mp4" />
+</video>
+
+    </div>
+  </section>
+
+  <!-- Project Links Section -->
+  <section class="parallax" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img src="timeline.png" alt="Project 1" />
+          <p>This HTML and CSS project features a clean vertical layout with subtle animations, icons, and hover effects. Ideal for showcasing personal or professional milestones creatively.</p>
+          <a href="https://aaditi-digra.github.io/My-Timeline/" class="btn">Visit</a>
+        </div>
+        <div class="card">
+          <img src="Palette Pop.png" alt="Project 2" />
+          <p>A sleek and minimalist website that displays curated color palette combinations for designers and creatives. Designed with HTML and CSS to help users choose aesthetic color themes easily.</p>
+          <a href="https://aaditi-digra.github.io/Color-Palette-Generator/" class="btn">Visit</a>
+        </div>
+        <div class="card">
+          <img src="cafe bloom.png" alt="Project 3" />
+          <p>Cafe Bloom is a pastel-themed responsive cafe website built using HTML and CSS. Showcases a cozy menu layout, elegant sectioning for food categories.</p>
+          <a href="https://aaditi-digra.github.io/cafe-bloom/" class="btn">Visit</a>
+        </div>
+        <div class="card">
+          <img src="hogwarts.png" alt="Project 4" />
+          <p>A magical, interactive web experience inspired by the Harry Potter universe. Built using HTML, CSS, and JavaScript with glowing visual effects and a fantasy-style interface.</p>
+          <a href="https://aaditi-digra.github.io/Harry-Potter/" class="btn">Visit</a>
+        </div>
+        <div class="card">
+          <img src="matchme.jpg" alt="Project 5" />
+          <p>MatchMe is a responsive memory card game built with HTML, CSS, and JavaScript. It features emoji cards, timer, sound effects, and smooth background animations for an engaging user experience.</p>
+          <a href="https://aaditi-digra.github.io/MatchMe/" class="btn">Visit</a>
+        </div>
+        <div class="card">
+          <img src="velvette.jpg" alt="Project 6" />
+          <p>A responsive, interactive skincare consultation web app that delivers personalized routines through a clean, animated UI — built using HTML, CSS, and JavaScript.</p>
+          <a href="https://aaditi-digra.github.io/Velvette/" class="btn">Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="parallax" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <form class="contact-form" action="mailto:craftrme@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+  <p>
+    <a href="https://www.linkedin.com/in/aaditi-digra" target="_blank" style="color: #d8b4e2; text-decoration: none;">
+      <i class="fab fa-linkedin" style="margin-right: 10px;"></i>Connect on LinkedIn
+    </a>
+  </p>
+  <p>&copy; 2025 Aaditi Digra. All Rights Reserved.</p>
+</footer>
+
+  <!-- Back to Top Button -->
+  <div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" style="display:none;">
+    ↑
+  </div>
+
+  <script>
+  function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
+
+
